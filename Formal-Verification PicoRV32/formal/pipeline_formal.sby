@@ -1,0 +1,15 @@
+[options]
+mode prove
+depth 50
+
+[engines]
+smtbmc boolector yices z3
+
+[script]
+read -formal ../src/picorv32_pipeline_5stage.sv ../src/pipeline_formal_check.sv ../src/assumptions.sv
+prep -top pipeline_formal_check
+
+[files]
+../src/picorv32_pipeline_5stage.sv
+../src/pipeline_formal_check.sv
+../src/assumptions.sv

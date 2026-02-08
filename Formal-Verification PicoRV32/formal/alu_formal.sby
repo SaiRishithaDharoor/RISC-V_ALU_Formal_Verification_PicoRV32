@@ -1,0 +1,14 @@
+[options]
+mode prove
+depth 20
+
+[engines]
+smtbmc boolector yices
+
+[script]
+read -formal ../src/picorv32_alu.sv ../src/alu_formal_check.sv
+prep -top alu_formal_check
+
+[files]
+../src/picorv32_alu.sv
+../src/alu_formal_check.sv
